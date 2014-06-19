@@ -4,7 +4,7 @@
  */
 if(!defined('EMLOG_ROOT')) {exit('error!');} 
 ?>
-<ul id="sidebar">
+<div id="sidebar">
 <?php 
 $widgets = !empty($options_cache['widgets1']) ? unserialize($options_cache['widgets1']) : array();
 doAction('diff_side');
@@ -35,4 +35,5 @@ foreach ($widgets as $val)
 <a href="<?php echo BLOG_URL; ?>rss.php" title="RSS订阅"><img src="<?php echo TEMPLATE_URL; ?>images/rss.gif" alt="订阅Rss"/></a>
 </div>
 <?php endif;?>
-</ul><!--end #siderbar-->
+</div><!--end #siderbar-->
+	<div style="clear:both;"></div>

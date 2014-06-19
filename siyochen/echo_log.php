@@ -4,12 +4,13 @@
  */
 if(!defined('EMLOG_ROOT')) {exit('error!');} 
 ?>
-<div id="content">
-<div id="contentleft">
-	<h2><?php topflg($top); ?><?php echo $log_title; ?></h2>
-	<p class="date"><?php echo gmdate('Y-n-j', $date); ?>  <?php blog_author($author); ?> <?php blog_sort($logid); ?> <?php editflg($logid,$author); ?></p>
+<div id="log_content">
+<div id="log_contentleft">
+<div id='log_title'><h2><?php topflg($top); ?><?php echo $log_title; ?></h2></div>
+	<p class="date">Published on:<?php echo gmdate('F j Y', $date); ?>&nbspby&nbsp<?php blog_author($author); ?>  <?php editflg($logid,$author); ?><span>分类:<?php blog_sort($logid); ?></span></p>
+	<div class='log_content'>
 	<?php echo $log_content; ?>
-	<p class="tag"><?php blog_tag($logid); ?></p>
+	</div>
 	<?php doAction('log_related', $logData); ?>
 	<div class="nextlog"><?php neighbor_log($neighborLog); ?></div>
 	<?php blog_comments($comments); ?>

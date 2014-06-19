@@ -53,6 +53,7 @@ require_once View::getView('module');
   </div>
 <div id="wrap">
   <div id="nav"><?php blog_navi();?></div>
+  <?php if("http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'] == BLOG_URL):?>
 <div class='sideshow'>
 <ul>
 <?php
@@ -73,6 +74,6 @@ for($i=0;$i<$num;$i++)
 <div id='sawtooth'>
 <img src='<?php echo TEMPLATE_URL; ?>/images/sawtooth.png' />
 </div>
-
 </div>
+<?php endif;?>
 

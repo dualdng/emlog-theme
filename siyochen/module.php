@@ -92,11 +92,8 @@ function widget_twitter($title){
 	<ul id="twitter">
 	<?php foreach($newtws_cache as $value): ?>
 	<?php $img = empty($value['img']) ? "" : '<a title="查看图片" class="t_img" href="'.BLOG_URL.str_replace('thum-', '', $value['img']).'" target="_blank">&nbsp;</a>';?>
-	<li><?php echo $value['t']; ?><?php echo $img;?><p><?php echo smartDate($value['date']); ?></p></li>
+	<li><?php echo $value['t']; ?><?php echo $img;?></li>
 	<?php endforeach; ?>
-    <?php if ($istwitter == 'y') :?>
-	<p><a href="<?php echo BLOG_URL . 't/'; ?>">更多&raquo;</a></p>
-	<?php endif;?>
 	</ul>
 	</li>
 <?php }?>
@@ -167,14 +164,11 @@ function widget_random_log($title){
 <?php
 //widget：搜索
 function widget_search($title){ ?>
-	<li>
-	<h3><span><?php echo $title; ?></span></h3>
-	<ul id="logsearch">
+	<div id="logsearch">
 	<form name="keyform" method="get" action="<?php echo BLOG_URL; ?>index.php">
-	<input name="keyword" class="search" type="text" />
+	<input name="keyword" class="search" type="text" value='Type search text and press enter...'/>
 	</form>
-	</ul>
-	</li>
+	</div>
 <?php } ?>
 <?php
 //widget：归档
@@ -323,13 +317,12 @@ function blog_author($uid){
 function neighbor_log($neighborLog){
 	extract($neighborLog);?>
 	<?php if($prevLog):?>
-	&laquo; <a href="<?php echo Url::log($prevLog['gid']) ?>"><?php echo $prevLog['title'];?></a>
+	<a href="<?php echo Url::log($prevLog['gid']) ?>"><?php echo '上一篇';?></a>
 	<?php endif;?>
 	<?php if($nextLog && $prevLog):?>
-		|
 	<?php endif;?>
 	<?php if($nextLog):?>
-		 <a href="<?php echo Url::log($nextLog['gid']) ?>"><?php echo $nextLog['title'];?></a>&raquo;
+		 <a href="<?php echo Url::log($nextLog['gid']) ?>"><?php echo '下一篇';?></a>
 	<?php endif;?>
 <?php }?>
 <?php
@@ -446,7 +439,7 @@ echo '<div id=\'noimg\'>'.mb_substr(strip_tags($res['content']),0,100,'utf-8').'
 function top_img()
 {
 	$DB = MySqlii::getInstance(); 
-	$query='select content,excerpt,title,gid from emlog_blog where top=\'y\'';
+	$query='select content,excerpt,title,gid from emlog_blog a left join emlog_sort b on a.sortid=b.sid where b.sortname like \'%置顶%\'';//修改什么分类的文章会被显示在首页幻灯片
 	$res = $DB->query($query);
 	$res=$res->fetch_all();
 	$num=count($res);
