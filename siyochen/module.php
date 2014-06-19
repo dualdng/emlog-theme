@@ -467,3 +467,12 @@ function top_img()
 	return $array;
 }
 ?>
+<!-- 用户头像-->
+<?php
+function avatar()
+{
+		global $CACHE; 
+		$user_cache = $CACHE->readCache('user');
+		echo '<img src=\''.$user_cache[1]['photo']['src'].'\' width=\'140\'height=\'140\'alt=\'blogger\' />';
+}
+?>
