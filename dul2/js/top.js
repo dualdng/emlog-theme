@@ -1,0 +1,1 @@
+var skyscrollSpeed=40;var skystep=1;var skycurrent=0;var skyimageWidth=2247;var skyheaderWidth=800;var skyrestartPosition=-(skyimageWidth-skyheaderWidth);function scrollsky(){skycurrent-=skystep;if(skycurrent==skyrestartPosition){skycurrent=0}$('#top,#foot').css("background-position",skycurrent+"px 0")}var skyinit=setInterval("scrollsky()",skyscrollSpeed);
