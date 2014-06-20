@@ -382,7 +382,7 @@ function blog_comments_post($logid,$ckname,$ckmail,$ckurl,$verifyCode,$allow_rem
 	<div class="comment-post" id="comment-post">
 		<div class="cancel-reply" id="cancel-reply" style="display:none"><a href="javascript:void(0);" onclick="cancelReply()">取消回复</a></div>
 		<p class="comment-header"><b>发表评论：</b><a name="respond"></a></p>
-		<form method="post" name="commentform" action="<?php echo BLOG_URL; ?>index.php?action=addcom" id="commentform">
+		<form method="post" name="commentform" onSubmit='return test();' id="commentform">
 			<input type="hidden" name="gid" value="<?php echo $logid; ?>" />
 			<?php if(ROLE == ROLE_VISITOR): ?>
 			<p>
@@ -399,7 +399,7 @@ function blog_comments_post($logid,$ckname,$ckmail,$ckurl,$verifyCode,$allow_rem
 			</p>
 			<?php endif; ?>
 			<p><textarea name="comment" id="comment" rows="10" tabindex="4"></textarea></p>
-			<p><?php echo $verifyCode; ?> <input type="submit" id="comment_submit" value="发表评论" tabindex="6" /></p>
+			<p><?php echo $verifyCode; ?> <input type="submit" id="comment_submit"  value="发表评论" tabindex="6" /></p>
 			<input type="hidden" name="pid" id="comment-pid" value="0" size="22" tabindex="1"/>
 		</form>
 	</div>

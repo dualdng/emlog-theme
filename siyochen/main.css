@@ -227,27 +227,6 @@ a img.aligncenter {display: block; border:none; margin:10px auto 10px auto;}
 .footerbox ul li {background:transparent url("images/bullet.png") 0px 3px no-repeat; margin: 0px 0px 0px 0px; padding: 0px 0px 0px 18px;}
 
 #contentleft .nextlog{text-align:center; margin:5px 0; font-size:12px}
-#contentleft .comment-header{margin:15px 0px 5px 0px}
-#contentleft .comment-post {clear:both}
-#contentleft .comment-post p{margin:5px 0px}
-#contentleft .comment-post .cancel-reply{float:right;font-size:12px;cursor:pointer; _cursor:hand;padding-right:10%}
-#contentleft .comment-post .cancel-reply:hover{text-decoration:underline}
-#contentleft .comment-post small{font-size:12px; color:#999}
-#contentleft .comment-post input{padding:5px 5px; border:1px #b6b6b6 solid; font-size:12px; color:#333; width:40%}
-#contentleft .comment-post #comment{ width:90%; border:1px #b6b6b6 solid; font-size:12px; color:#333}
-#contentleft .comment-post #comment_submit{background:url(images/em_button.gif) no-repeat; border:0; color:#000000; width:111px; height:29px; text-align:center; cursor:pointer; _cursor:hand}
-#contentleft .comment-post .input{width:100px}
-#contentleft .comment{margin:10px 0; padding:10px 0px; font-size:12px; border-bottom:1px #f7f7f7  solid; overflow:hidden; color:#333; height:100%; zoom:1}
-#contentleft .comment span{color:#ff7a15;}
-#contentleft .comment .comment-time{color:#999999; display:inline; font-size:10px;}
-#contentleft .comment .avatar{float:left;margin:5px}
-#contentleft .comment .comment-info{float:left;width:90%}
-#contentleft .comment .comment-content{margin:8px 0px 0px 0px;}
-#contentleft .comment .comment-reply{float:right;font-size:12px;cursor:pointer; _cursor:hand;}
-#contentleft .comment .comment-reply:hover{text-decoration:underline}
-#contentleft .comment-children{width:95%;margin:auto;clear:both;border:none;padding:0}
-#contentleft .comment .comment-post{width:90%;margin:15px auto}
-
 .calendartop{text-align:center; font-size:12px; margin-left:30px}
 .calendar{margin-bottom:10px;}
 .calendar td{font-size:11px; text-align:center; padding:1px 5px; line-height:1.6;}
@@ -273,8 +252,8 @@ a img.aligncenter {display: block; border:none; margin:10px auto 10px auto;}
 #twitter li small {font-size: 10px;padding: 0px 10px;}
 #twitter li .t_img{background:url(images/img.gif) no-repeat;padding: 0 7px;margin: 0 0 0 10px;}
 
-#tw .main_img{ border:1px #2772ae solid; float:left;}
-#tw .main_img img{ border:1px #fff solid}
+#tw .main_img{  float:left;}
+#tw .main_img img{border-radius:50%;border:2px solid pink; }
 #tw .op{ float:left; height:18px;margin:6px 5px 3px;}
 #tw ul{ margin:5px 0px 3px 25px; width:520px; line-height:1.8;padding:0px;}
 #tw ul .li{ margin:10px 0px;padding:5px 0px;border-bottom: #F7F7F7 1px solid;}
@@ -284,7 +263,7 @@ a img.aligncenter {display: block; border:none; margin:10px auto 10px auto;}
 #tw ul li .post1 span{color:#886353; font-weight:bold;}
 #tw ul li{ clear:both; padding:0px; margin:0px;}
 #tw ul li .bttome {margin:3px 0;vertical-align:middle}
-#tw ul li .bttome .time{ float:left;line-height:14px;margin:0;}
+#tw ul li .post1 .time{ float:right;line-height:14px;margin:0;}
 #tw ul li .bttome .post{ float: right;font-size:12px;line-height:14px;margin:0;}
 #tw .time{ font-size:12px; color:#999999; padding-left:43px}
 #tw ul .r{ margin:5px 0px 0px 40px;color:#666666; border:0; padding:0px;}
@@ -315,7 +294,6 @@ a img.aligncenter {display: block; border:none; margin:10px auto 10px auto;}
 #tw ul .r li{width:565px}
 #tw ul .huifu textarea{width:550px;}
 #tw ul li .bttome .post{ font-size:12px;line-height:14px;margin:0; text-align:right; float:none;clear:both; width:610px; background:0; border:0;}
-#tw ul li .bttome .time{ float:none; margin-top:-25px;}
 #tw p .t_img{background:url(images/img.gif) no-repeat;padding: 0 7px;margin: 0 0 0 10px;}
 
 /** echo_log */
@@ -391,13 +369,11 @@ padding:2% 0;
 .comment-info b{
 }
 .comment-info span{
-		position:absolute;
-		left:85%;
+		float:right;
 		font-size:12px;
 }
 .comment-content {
 		border-top:2px solid pink;
-		padding-top:2%;
 }
 .comment-children {
 		width:95%;
@@ -406,8 +382,18 @@ padding:2% 0;
 }
 #comment-place {
 margin-bottom:53px;
+clear:both;
 }
 #comment-place textarea {
 width:90%;
 height:50px;
+}
+#ajax_comments {
+		color:pink;
+		font-size:16px;
+		padding:1%;
+		opacity:.7;
+		display:none;
+		text-align:left;
+		border:1px solid #61a64b;
 }

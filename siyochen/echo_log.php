@@ -13,6 +13,7 @@ if(!defined('EMLOG_ROOT')) {exit('error!');}
 	</div>
 	<?php doAction('log_related', $logData); ?>
 	<div class="nextlog"><?php neighbor_log($neighborLog); ?></div>
+	<div id='ajax_comments'></div>
 	<?php blog_comments($comments); ?>
 	<?php blog_comments_post($logid,$ckname,$ckmail,$ckurl,$verifyCode,$allow_remark); ?>
 	<div style="clear:both;"></div>

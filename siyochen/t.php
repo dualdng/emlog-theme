@@ -4,8 +4,8 @@
  */
 if(!defined('EMLOG_ROOT')) {exit('error!');} 
 ?>
-<div id="content">
-<div id="contentleft">
+<div id="log_content">
+<div id="log_contentleft">
 <div id="tw">
     <ul>
     <?php 
@@ -19,11 +19,12 @@ if(!defined('EMLOG_ROOT')) {exit('error!');}
     ?> 
     <li class="li">
     <div class="main_img"><img src="<?php echo $avatar; ?>" width="32px" height="32px" /></div>
-    <div class="post1"><span><?php echo $author; ?></span><br /><?php echo $val['t'].'<br/>'.$img;?></div>
+    <div class="post1"><span><?php echo $author; ?></span><p class="time"><?php echo $val['date'];?> </p>
+<br /><?php echo $val['t'].'<br/>'.$img;?></div>
     <div class="clear"></div>
     <div class="bttome">
         <p class="post"><a href="javascript:loadr('<?php echo DYNAMIC_BLOGURL; ?>?action=getr&tid=<?php echo $tid;?>','<?php echo $tid;?>');">回复(<span id="rn_<?php echo $tid;?>"><?php echo $val['replynum'];?></span>)</a></p>
-        <p class="time"><?php echo $val['date'];?> </p>
+
     </div>
 	<div class="clear"></div>
    	<ul id="r_<?php echo $tid;?>" class="r"></ul>
@@ -42,7 +43,7 @@ if(!defined('EMLOG_ROOT')) {exit('error!');}
     <?php endif;?>
     </li>
     <?php endforeach;?>
-	<li id="pagenavi"><?php echo $pageurl;?><span></span></li>
+	<li id="pagenavi"><?php echo $pageurl;?></li>
     </ul>
 </div><!--end #tw-->
 </div><!--end #contentleft-->
