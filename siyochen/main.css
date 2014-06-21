@@ -358,22 +358,19 @@ padding:2% 0;
 .avatar img {
 		-webkit-border-radius:50%;
 		border:2px solid pink;
+		float:left;
 }
-.comment-info {
-		position:absolute;
-		left:9%;
-		top:3%;
-		width:90%;
-}
-
 .comment-info b{
 }
+
 .comment-info span{
 		float:right;
 		font-size:12px;
+		margin-top:0.5%;
 }
 .comment-content {
 		border-top:2px solid pink;
+
 }
 .comment-children {
 		width:95%;
@@ -382,9 +379,12 @@ padding:2% 0;
 }
 #comment-place {
 margin-bottom:53px;
-clear:both;
 }
 #comment-place textarea {
+width:90%;
+height:50px;
+}
+#comment-post textarea {
 width:90%;
 height:50px;
 }
@@ -397,3 +397,4 @@ height:50px;
 		text-align:left;
 		border:1px solid #61a64b;
 }
+

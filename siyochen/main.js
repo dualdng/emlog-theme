@@ -22,7 +22,6 @@ function test()
 		var pid=$(':input[name=\'pid\']').val(); 
 		var comment=$('#comment').val(); 
 		var poststr='comname='+comname+'&commail='+commail+'&comurl='+comurl+'&comment='+comment+'&gid='+gid+'&pid='+pid;
-		alert(poststr);
 		$.ajax({
 				url:'index.php?action=addcom',
 				type:'POST',
