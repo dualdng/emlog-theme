@@ -10,7 +10,7 @@ Sidebar Amount:0
 if(!defined('EMLOG_ROOT')) {exit('error!');}
 require_once View::getView('module');
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -40,6 +40,9 @@ require_once View::getView('module');
 <script src="<?php echo BLOG_URL; ?>include/lib/js/common_tpl.js" type="text/javascript"></script>
 <!--[if IE 6]>
 <script src="<?php echo TEMPLATE_URL; ?>iefix.js" type="text/javascript"></script>
+<![endif]-->
+<!--[if  lte IE 9]>
+<link href='<?php echo TEMPLATE_URL; ?>ie.css' rel='stylesheet'/>
 <![endif]-->
 <?php doAction('index_head'); ?>
 </head>
