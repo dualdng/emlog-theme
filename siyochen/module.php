@@ -420,10 +420,9 @@ function blog_tool_ishome(){
 //获取文章第一张图片
 function first_img($id)
 {
-	$DB = MySqlii::getInstance(); 
+	$DB = MySql::getInstance(); 
 	$query='select content from emlog_blog where gid=\''.$id.'\'';
-	$res = $DB->query($query);
-	$res=$DB->fetch_array($res);
+	$res=$DB->once_fetch_array($query);
 	$pattern='/<img[a-zA-Z0-9 -_]*\/>/';
 	$result=preg_match($pattern,$res['content'],$matches);
 	if(!empty($matches[0]))
@@ -438,30 +437,34 @@ echo '<div id=\'noimg\'>'.mb_substr(strip_tags($res['content']),0,100,'utf-8').'
 }
 function top_img()
 {
-	$DB = MySqlii::getInstance(); 
+	$DB = MySql::getInstance(); 
 	$query='select content,excerpt,title,gid from emlog_blog a left join emlog_sort b on a.sortid=b.sid where b.sortname like \'%置顶%\'';//修改什么分类的文章会被显示在首页幻灯片
 	$res = $DB->query($query);
-	$res=$res->fetch_all();
-	$num=count($res);
+	$res_arr=array();
+	while($result=$DB->fetch_row($res))
+	{
+			$res_arr[]=$result;
+	}
+	$num=count($res_arr);
 	$array=array();
 	for($i=0;$i<$num;$i++)
 	{
 	$pattern='/<img[a-zA-Z0-9 -_]*\/>/';
-	$result=preg_match($pattern,$res[$i][0],$matches);
+	$result=preg_match($pattern,$res_arr[$i][0],$matches);
 	if(!empty($matches[0]))
 	{
 			$array[$i][0]=$matches[0];
-			$array[$i][1]=$res[$i][1];
-			$array[$i][2]=$res[$i][2];
-			$array[$i][3]=$res[$i][3];
+			$array[$i][1]=$res_arr[$i][1];
+			$array[$i][2]=$res_arr[$i][2];
+			$array[$i][3]=$res_arr[$i][3];
 	}
 	else
 	{
 //如果没有图片则显示一张自定义图片		
 			$array[$i][0]='<img src=\''.TEMPLATE_URL.'/images/content.jpg\'/>';
-			$array[$i][1]=$res[$i][1];
-			$array[$i][2]=$res[$i][2];
-			$array[$i][3]=$res[$i][3];
+			$array[$i][1]=$res_arr[$i][1];
+			$array[$i][2]=$res_arr[$i][2];
+			$array[$i][3]=$res_arr[$i][3];
 	}
 	}
 	return $array;
