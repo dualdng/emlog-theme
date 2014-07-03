@@ -4,8 +4,8 @@
  */
 if(!defined('EMLOG_ROOT')) {exit('error!');} 
 ?>
-<div id="log_content">
-<div id="log_contentleft">
+<div id="t_content">
+<div id="t_contentleft">
 <div id="tw">
     <ul>
     <?php 
@@ -43,11 +43,12 @@ if(!defined('EMLOG_ROOT')) {exit('error!');}
     <?php endif;?>
     </li>
     <?php endforeach;?>
-	<li id="pagenavi"><?php echo $pageurl;?></li>
     </ul>
+
+	<li id="t_pagenavi"><?php echo $pageurl;?></li>
 </div><!--end #tw-->
 </div><!--end #contentleft-->
+<div style='clear:both'></div>
 <?php
- include View::getView('side');
  include View::getView('footer');
 ?>

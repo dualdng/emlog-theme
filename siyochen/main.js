@@ -1,5 +1,6 @@
 $(document).on('click','#pagenavi a',function()
 {
+		$('#loading').css({'display':'block'});
 		var url=$(this).attr('href');
 		$.ajax({
 				url:url,
@@ -34,4 +35,21 @@ function test()
 				}
 				})
 		return false;
+}
+$(document).ready(function($) {
+						var H = $("#nav").offset().top+85;
+						$(window).scroll(function() {
+								var scroH = $(this).scrollTop();
+								if (scroH >= H) {
+		$('#right_bar').css({'visibility':'visible'});
+								} else if (scroH < H) {
+								$("#right_bar").css({
+										"visibility": "hidden",				
+										})
+								};
+						})
+				})
+function go_top(){
+		var hight=$('#banner').offset().top;
+		$('body').animate({scrollTop:hight},500);
 }

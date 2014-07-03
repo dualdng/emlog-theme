@@ -6,6 +6,7 @@ if(!defined('EMLOG_ROOT')) {exit('error!');}
 ?>
 <div id="content">
 <div id="contentleft">
+		<div id='loading'><img src='<?php echo TEMPLATE_URL; ?>images/loading.gif' /></div>
 <?php doAction('index_loglist_top'); ?>
 
 <?php 

@@ -47,8 +47,14 @@ require_once View::getView('module');
 <?php doAction('index_head'); ?>
 </head>
 <body>
+<div id='right_bar'>
+<a href='javascript:void(0)'><img src='<?php echo TEMPLATE_URL; ?>images/mail.png' /></a><br />
+<a href='javascript:void(0)'><img src='<?php echo TEMPLATE_URL; ?>images/pan.png' /></a><br />
+<a href='javascript:void(0)' onclick='go_top();'><img src='<?php echo TEMPLATE_URL; ?>images/go-top.png' /></a><br />
+</div>
+
   <?php if(Option::get('topimg')): ?>
-  <div id="banner"><a href="<?php echo BLOG_URL; ?>"><?php avatar(); ?></a></div>
+  <div id="banner"><a href="<?php echo BLOG_URL; ?>"><img src='<?php echo TEMPLATE_URL; ?>images/top.jpg' /></a></div>
   <?php endif;?>
 <div id="header">
     <h1><a href="<?php echo BLOG_URL; ?>"><?php echo $blogname; ?></a></h1>

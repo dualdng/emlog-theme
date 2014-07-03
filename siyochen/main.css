@@ -200,7 +200,7 @@ padding-top:2%;
 **/
 #singlecontent {background:#ededed;float:left;width:312.5px;height:200px;border:2px solid #fff;margin-bottom:1%;position:relative;word-wrap:break-word;overflow:hidden;}
 #noimg {margin:13% 2% 0 2%;}
-#singlecontent img{width:100%;height:200px;}
+#singlecontent img{width:100%;height:auto;}
 #contentpak {text-align:center;visibility:hidden;position:absolute; top:10px;left:33px;background:#fff;opacity: .8;height:180px;width:250px;}
 #singlecontent:hover > #contentpak{visibility:visible;}
 
@@ -255,11 +255,11 @@ a img.aligncenter {display: block; border:none; margin:10px auto 10px auto;}
 #tw .main_img{  float:left;}
 #tw .main_img img{border-radius:50%;border:2px solid pink; }
 #tw .op{ float:left; height:18px;margin:6px 5px 3px;}
-#tw ul{ margin:5px 0px 3px 25px; width:520px; line-height:1.8;padding:0px;}
+#tw ul{ margin:5px 0px 3px 25px; width:900px; line-height:1.8;padding:0px;}
 #tw ul .li{ margin:10px 0px;padding:5px 0px;border-bottom: #F7F7F7 1px solid;}
 #tw ul li{margin:0px 0px; padding:0;}
 #tw ul li .main_img{ margin-top:5px;}
-#tw ul li .post1{ float:left;font-size:13px; padding:0px;margin:0; width:470px; padding:0px 0px 0px 8px;}
+#tw ul li .post1{ font-size:13px; padding:0px;margin:0; width:900px; padding:0px 0px 0px 8px;}
 #tw ul li .post1 span{color:#886353; font-weight:bold;}
 #tw ul li{ clear:both; padding:0px; margin:0px;}
 #tw ul li .bttome {margin:3px 0;vertical-align:middle}
@@ -275,12 +275,12 @@ a img.aligncenter {display: block; border:none; margin:10px auto 10px auto;}
 #tw ul .huifu{margin:5px 0px 0px 43px; background:#F5F5F5;border:#CCCCCC solid 1px;text-align:center;display:none;}
 #tw ul .huifu textarea{ margin:5px; width:460px; border:#CCCCCC solid 1px;overflow:auto;}
 #tw ul .huifu input{ margin:0px 5px;}
-#tw ul .huifu div{ text-align:left; padding:0px 5px; text-align:center}
+#tw ul .huifu div{ text-align:left; padding:0px 5px;}
 #tw ul .huifu .text{ width:60px;}
 #tw ul .button_p{background:url(images/weibe_button.gif) no-repeat; border:0;cursor:pointer; _cursor:hand; width:63px; height:25px;}
 #tw .tbutton{ font-size:12px;float:none; margin-bottom:3px;}
 #tw .tbutton input{ width:90px; border:#CCCCCC solid 1px; }
-#tw .tbutton .button_p{ background:url(images/weibe_button.gif) no-repeat; border:0;cursor:pointer; _cursor:hand; width:60px; height:25px;}
+#tw .tbutton .button_p{ background:url(images/weibe_button.gif) no-repeat; border:0;cursor:pointer; _cursor:hand; width:60px; height:25px;margin-left:2%;}
 #tw .tbutton .tinfo{ float:left; }
 #tw .msg{ clear:both}
 #tw li{list-style:none;}
@@ -289,11 +289,11 @@ a img.aligncenter {display: block; border:none; margin:10px auto 10px auto;}
 #tw ul li ul{ line-height:0;font-size:0;}
 #tw ul li ul li{ font-size:12px; line-height:22px;}
 #tw .top{width:650px;}
-#tw ul li .post1{ width:560px;}
+#tw ul li .post1{ width:900px;}
 #tw ul{ width:610px;}
 #tw ul .r li{width:565px}
-#tw ul .huifu textarea{width:550px;}
-#tw ul li .bttome .post{ font-size:12px;line-height:14px;margin:0; text-align:right; float:none;clear:both; width:610px; background:0; border:0;}
+#tw ul .huifu textarea{width:530px;}
+#tw ul li .bttome .post{ font-size:12px;line-height:14px;margin:0; text-align:right; float:none;clear:both; width:900px; background:0; border:0;}
 #tw p .t_img{background:url(images/img.gif) no-repeat;padding: 0 7px;margin: 0 0 0 10px;}
 
 /** echo_log */
@@ -323,6 +323,11 @@ p.date span {
 		padding-bottom:32px;
 		border-bottom:1px solid #eee;
 }
+.log_content img{
+		width:100%;
+		height:auto;
+}
+
 .nextlog {
 		height:30px;
 		line-height:30px;
@@ -397,4 +402,40 @@ height:50px;
 		text-align:left;
 		border:1px solid #61a64b;
 }
+#loading {
+		position:fixed;
+		top:50%;
+		left:50%;
+		display:none;
+}
+#t_content {
+		width:940px;
+		margin:0 auto;
+}
+.t_contentleft img {
+		width:100%;
+		height:auto;
+}
+#t_contentleft .comment {
+		margin:0 2%;
+}
 
+#t_contentleft #comment-place {
+		margin:0 2%;
+}
+#t_pagenavi{color:#999999;clear:both;text-align:center; font-size:14px;padding:3% 0;margin-bottom:2%;}
+
+#t_pagenavi span{background:#dedede;padding:6px 12px;border-radius:50%;}
+#t_pagenavi a{background:#ef8090;color:#fff;padding:6px 12px;border-radius:50%;text-decoration:none;}
+#t_pagenavi a:link{background:#ef8090;padding:6px 12px;border-radius:50%;}
+#t_pagenavi a:visited{background:#ef8090;padding:6px 12px;border-radius:50%;}
+
+#t_pagenavi a:hover{background:#dedede;color:#999999;padding:6px 12px;border-radius:50%;}
+#t_pagenavi a:active{background:#ef8090;padding:6px 12px;border-radius:50%;}
+
+#right_bar {
+		position:fixed;
+		top:20%;
+		right:11.5%;
+		visibility:hidden;
+}
