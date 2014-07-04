@@ -421,7 +421,7 @@ function blog_tool_ishome(){
 function first_img($id)
 {
 	$DB = MySql::getInstance(); 
-	$query='select content from siyo_blog where gid=\''.$id.'\'';
+	$query='select content from emlog_blog where gid=\''.$id.'\'';
 	$res=$DB->once_fetch_array($query);
 	$pattern='/http:\/\/[a-z0-9A-Z\/. -]*.jpg|http:\/\/[a-z0-9A-Z\/. -]*.jpeg|http:\/\/[a-z0-9A-Z\/. -]*.png|http:\/\/[a-z0-9A-Z\/. -]*.gif/';
 	$result=preg_match($pattern,$res['content'],$matches);
@@ -438,7 +438,7 @@ echo '<div id=\'noimg\'>'.mb_substr(strip_tags($res['content']),0,100,'utf-8').'
 function top_img()
 {
 	$DB = MySql::getInstance(); 
-	$query='select content,excerpt,title,gid from siyo_blog a left join siyo_sort b on a.sortid=b.sid where b.sortname like \'%置顶%\'';//修改什么分类的文章会被显示在首页幻灯片
+	$query='select content,excerpt,title,gid from emlog_blog a left join emlog_sort b on a.sortid=b.sid where b.sortname like \'%top%\'';//修改什么分类的文章会被显示在首页幻灯片
 	$res = $DB->query($query);
 	$res_arr=array();
 	while($result=$DB->fetch_row($res))
